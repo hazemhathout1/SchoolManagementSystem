@@ -29,9 +29,6 @@ gradeup=0
     #programming int
     #primary key(student_id)
 #)
-
-#----------------------mysql Connection-------------------------
-
 #---------------------------used Functions------------------------
 #Check the Password
 def CheckPassword():
@@ -57,6 +54,7 @@ def CheckPassword():
 #print(myresult[6][prog])
 
 #------------------Main Classes------------------------
+#class student is not used
 class Student:
     no_of_student=0
     def __init__(self,name,maths,physics,English,Chemistry,Programming):
@@ -67,18 +65,15 @@ class Student:
         self.__Chemistry=Chemistry
         self.__Programming=Programming
         Student.no_of_student+=1
-    def getNumber(self):
-        return self.__number
-    def Display(self):
-        print(f"{self.__number}\t\t\t{self.__name}\t\t\t{self.__arriveTime}")
-
-
 #------------------------------------------------------------------------
 #Main Function
 while flag==1:
     passcheck=CheckPassword()
     if passcheck==0:
+        print("----------------------")
         print("You Are not Admin")
+        print("----------------------")
+        flag=0
     else:
         print("----------------------------Welcome Admin-----------------------------------")
         while flag1==1:
